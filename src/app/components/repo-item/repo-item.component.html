@@ -1,6 +1,8 @@
 <div class="repo">
-  <h3>{{repository.name}}</h3>
-  <p>stars:{{repository.stars}}</p>
-  <p>language: {{repository.language}}</p>
-  <p>Last updated at {{repository.updatedDate}}</p>
+  <h3 class="repo-title">{{repository.full_name}}</h3>
+  <div class="repo-description">
+    <p>stars:{{repository.stargazers_count}}</p>
+    <p *ngIf="showLanguage">language: {{repository.language}}</p>
+    <p>Last commit: {{repository.updated_at}}</p>
+  </div>
 </div>
