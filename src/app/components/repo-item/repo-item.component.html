@@ -1,7 +1,11 @@
 <div class="repo">
-  <h3 class="repo-title">{{repository.full_name}}</h3>
-  <div class="repo-description">
+  <h3
+    class="repo-title">{{repository.full_name}}
     <p>stars:{{repository.stargazers_count}}</p>
+  </h3>
+
+  <div class="repo-description">
+    <p>owner:{{repository.owner.login}}</p>
     <p *ngIf="showLanguage">language: {{repository.language}}</p>
     <p>Last commit: {{repository.updated_at}}</p>
   </div>
