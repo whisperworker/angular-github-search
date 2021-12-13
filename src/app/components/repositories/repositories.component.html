@@ -1,4 +1,7 @@
 <app-search-repo></app-search-repo>
+<div class="loader" *ngIf="loading">
+  <div class="lds-dual-ring"></div>
+</div>
 <app-repo-item
   *ngFor="let repository of repos"
   [repository]="repository"

@@ -11,12 +11,21 @@ import {REPOS} from "../../../mock-repos";
 export class RepositoriesComponent implements OnInit {
   /*repos: Repository[] = REPOS;*/
   repos: Object[];
+  loading: boolean = false;
 
   constructor(private repoService: RepositoryService) { }
 
   ngOnInit(): void {
-    this.repoService
-      .getReposByName()
-      .subscribe((repos) => this.repos = repos.items)
+    this.loading = true;
+
+    const getRepos = () => {
+      return this.repoService
+        .getReposByName()
+        .subscribe((repos) => {
+          this.repos = repos.items;
+          this.loading = false;
+        })
+    }
+    setTimeout(getRepos, 1000)
   }
 }
