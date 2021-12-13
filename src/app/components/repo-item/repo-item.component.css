@@ -5,15 +5,15 @@
   cursor: pointer;
 }
 
-.repo h3 {
+.repo-title {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.repo p {
+.repo-description {
+  padding-top: 15px;
   display: flex;
-  align-items: flex-end;
   justify-content: space-between;
 }
 
