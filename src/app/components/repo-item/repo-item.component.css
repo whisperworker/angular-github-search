@@ -1,0 +1,19 @@
+.repo {
+  background: #f4f4f4;
+  margin: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.repo h3 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.repo p {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
