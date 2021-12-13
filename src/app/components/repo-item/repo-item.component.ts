@@ -7,11 +7,16 @@ import {Repository} from "../../../Repository";
   styleUrls: ['./repo-item.component.css']
 })
 export class RepoItemComponent implements OnInit {
-  @Input() repository: Repository;
+  @Input() repository: any;
+  @Input() showLanguage: boolean = false;
 
   constructor() { }
 
   ngOnInit(): void {
+    if(this.repository.language) {
+      this.showLanguage = true
+    }
   }
+
 
 }
