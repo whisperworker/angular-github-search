@@ -11,10 +11,3 @@
     />
   </div>
 </form>
-<app-loader *ngIf="loading"></app-loader>
-<ng-container *ngIf="!loading">
-  <app-repo-item
-    *ngFor="let repository of searchedRepos"
-    [repository]="repository"
-  ></app-repo-item>
-</ng-container>
