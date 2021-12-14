@@ -11,9 +11,12 @@
   justify-content: space-between;
 }
 
-.repo-description {
-  padding-top: 30px;
+.repo-description p{
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
+}
+
+.repo-stars {
+  font-weight: bold;
 }
 
