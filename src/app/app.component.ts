@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {RepositoriesComponent} from "./components/repositories/repositories.component";
 
 @Component({
   selector: 'app-root',

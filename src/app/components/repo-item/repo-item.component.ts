@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Repository} from "../../../Repository";
+
 
 @Component({
   selector: 'app-repo-item',
@@ -8,7 +8,7 @@ import {Repository} from "../../../Repository";
 })
 export class RepoItemComponent implements OnInit {
   @Input() repository: any;
-  @Input() showLanguage: boolean = false;
+  @Input()  showLanguage: boolean = false;
 
   constructor() { }
 
@@ -17,6 +17,4 @@ export class RepoItemComponent implements OnInit {
       this.showLanguage = true
     }
   }
-
-
 }
