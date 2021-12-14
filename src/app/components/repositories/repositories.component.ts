@@ -28,7 +28,7 @@ export class RepositoriesComponent implements OnInit {
     setTimeout(getRepos, 1000)
   }
 
-  onChange(e: any) {
+  clearRepos() {
     this.repos = []
   }
 
