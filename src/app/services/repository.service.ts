@@ -25,4 +25,18 @@ export class RepositoryService {
         .set(`q`, searchQuery)
     })
   }
+
+  getReposByStars() {
+    return this.http.get<any>(this.apiUrl, {
+      params: new HttpParams()
+        .set(`q`, "stars:>1")
+    })
+  }
+
+  getReposByLanguage(language: string) {
+    return this.http.get<any>(this.apiUrl, {
+      params: new HttpParams()
+        .set(`q`, `language:${language}`)
+    })
+  }
 }
