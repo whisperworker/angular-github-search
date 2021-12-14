@@ -25,11 +25,19 @@ export class RepositoriesComponent implements OnInit {
           this.loading = false;
         })
     }
-    setTimeout(getRepos, 1000)
+    setTimeout(getRepos, 0)
   }
 
   clearRepos() {
     this.repos = []
+  }
+
+  receiveQueryData($event: any) {
+    this.repos = $event;
+  }
+
+  loadingFromSearch($event: any) {
+    this.loading = $event
   }
 
 }
