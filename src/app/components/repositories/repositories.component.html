@@ -1,4 +1,4 @@
-<app-search-repo (keypress)="clearRepos()"></app-search-repo>
+<app-search-repo (keyup)="clearRepos()"></app-search-repo>
 <app-loader *ngIf="loading"></app-loader>
 <ng-container *ngIf="!loading">
   <app-repo-item
