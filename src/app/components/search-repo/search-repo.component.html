@@ -5,7 +5,16 @@
       type="text"
       name="query"
       id="query"
-      placeholder="your query"
+      placeholder="Your query"
+      [(ngModel)]="searchQuery"
+      (ngModelChange)="sendData($event)"
     />
   </div>
 </form>
+<app-loader *ngIf="loading"></app-loader>
+<ng-container *ngIf="!loading">
+  <app-repo-item
+    *ngFor="let repository of searchedRepos"
+    [repository]="repository"
+  ></app-repo-item>
+</ng-container>
