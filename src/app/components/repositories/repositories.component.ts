@@ -17,7 +17,6 @@ export class RepositoriesComponent implements OnInit {
 
   ngOnInit(): void {
     this.loading = true;
-
     const getRepos = () => {
       return this.repoService
         .getReposByName()
@@ -28,4 +27,9 @@ export class RepositoriesComponent implements OnInit {
     }
     setTimeout(getRepos, 1000)
   }
+
+  onChange(e: any) {
+    this.repos = []
+  }
+
 }
