@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {RepositoryService} from "../../services/repository.service";
-import {Repository} from "../../../Repository";
-import {REPOS} from "../../../mock-repos";
+
 
 @Component({
   selector: 'app-repositories',
@@ -9,7 +8,6 @@ import {REPOS} from "../../../mock-repos";
   styleUrls: ['./repositories.component.css']
 })
 export class RepositoriesComponent implements OnInit {
-  /*repos: Repository[] = REPOS;*/
   repos: Object[];
   loading: boolean = false;
 
@@ -25,11 +23,7 @@ export class RepositoriesComponent implements OnInit {
           this.loading = false;
         })
     }
-    setTimeout(getRepos, 0)
-  }
-
-  clearRepos() {
-    this.repos = []
+    setTimeout(getRepos, 500)
   }
 
   receiveQueryData($event: any) {
