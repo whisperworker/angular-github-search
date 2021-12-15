@@ -1,5 +1,5 @@
+<app-header></app-header>
 <app-search-repo
-
   (queryData)="receiveQueryData($event)"
   (loading)="loadingFromSearch($event)"
 ></app-search-repo>
@@ -10,4 +10,5 @@
     [repository]="repository"
   ></app-repo-item>
 </ng-container>
+<div *ngIf="isNothingSearched && !loading">Nothing founded!</div>
 

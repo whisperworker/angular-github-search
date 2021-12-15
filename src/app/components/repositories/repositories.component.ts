@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {RepositoryService} from "../../services/repository.service";
 
 
@@ -10,14 +10,15 @@ import {RepositoryService} from "../../services/repository.service";
 export class RepositoriesComponent implements OnInit {
   repos: Object[];
   loading: boolean = false;
+  isNothingSearched: boolean = false;
 
-  constructor(private repoService: RepositoryService) { }
+  constructor(private repoService: RepositoryService) {
+  }
 
   ngOnInit(): void {
     this.loading = true;
     const getRepos = () => {
-      return this.repoService
-        .getReposByName()
+      return this.repoService.getReposByName()
         .subscribe((repos) => {
           this.repos = repos.items;
           this.loading = false;
@@ -28,6 +29,8 @@ export class RepositoriesComponent implements OnInit {
 
   receiveQueryData($event: any) {
     this.repos = $event;
+    console.log(this.repos)
+    this.isNothingSearched = this.repos.length === 0;
   }
 
   loadingFromSearch($event: any) {
