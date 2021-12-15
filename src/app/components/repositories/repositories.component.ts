@@ -29,7 +29,6 @@ export class RepositoriesComponent implements OnInit {
 
   receiveQueryData($event: any) {
     this.repos = $event;
-    console.log(this.repos)
     this.isNothingSearched = this.repos.length === 0;
   }
 
