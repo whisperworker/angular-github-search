@@ -12,7 +12,7 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class RepositoryService {
-  private apiUrl = 'https://api.github.com/search/repositories';
+  private apiUrl = 'https://api.github.com/';
 
   constructor(private http: HttpClient) { }
 
@@ -20,21 +20,29 @@ export class RepositoryService {
     if(!searchQuery) {
       searchQuery = "stars:>1";
     }
-    return this.http.get<any>(this.apiUrl, {
+    return this.http.get<any>(this.apiUrl + "search/repositories", {
       params: new HttpParams()
         .set(`q`, searchQuery)
     })
   }
 
+  getRepository(owner:string, repoName:string): Observable<any> {
+    return this.http.get<any>(this.apiUrl + `repos/${owner}/${repoName}`)
+  }
+
+  getContributors(owner:string, repoName:string) {
+    return this.http.get<any>(this.apiUrl + `repos/${owner}/${repoName}/contributors`)
+  }
+
   getReposByStars() {
-    return this.http.get<any>(this.apiUrl, {
+    return this.http.get<any>(this.apiUrl + "search/repositories", {
       params: new HttpParams()
         .set(`q`, "stars:>1")
     })
   }
 
   getReposByLanguage(language: string) {
-    return this.http.get<any>(this.apiUrl, {
+    return this.http.get<any>(this.apiUrl + "search/repositories", {
       params: new HttpParams()
         .set(`q`, `language:${language}`)
     })
