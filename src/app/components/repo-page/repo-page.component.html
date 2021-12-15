@@ -1,0 +1,35 @@
+<div class="repo" >
+  <div class="repo-title">
+    <h2>{{repository.name}}</h2>
+    <p>Owner: {{repository.owner.login}}</p>
+  </div>
+  <div class="repo-info">
+    <div class="repo-description">
+      <h3 *ngIf="repository.description">Descriprion</h3>
+      <p class="repo-description">{{repository.description}}</p>
+    </div>
+
+    <div class="repo-language">Language: {{repository.language}}</div>
+
+    <div class="repo-size">Repository files: {{repository.size}}</div>
+
+    <div class="repo-created-date">Created: {{repository.created_at}}</div>
+    <div class="repo-updated-date">Updated: {{repository.updated_at}}</div>
+    <div class="repo-pushed-date">Pushed: {{repository.pushed_at}}</div>
+
+    <div class="repo-href">
+      <a href="{{repository.html_url}}">Repository link</a>
+    </div>
+
+  </div>
+
+  <div class="repo-contributors">
+    <h3>Contributors</h3>
+    <p *ngFor="let contributor of contributors">{{contributor.login}}</p>
+  </div>
+
+  <a href="/" class="repo-back">Back</a>
+</div>
+
+
+
