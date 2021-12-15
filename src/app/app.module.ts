@@ -17,7 +17,7 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 
 const routes: Routes = [
   {path: '', component: RepositoriesComponent},
-  {path: `info`, component: RepoPageComponent},
+  {path: 'repos/:user/:repository', component: RepoPageComponent},
   {path: '**', component: PageNotFoundComponent}
 ]
 

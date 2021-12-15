@@ -1,4 +1,4 @@
-<div class="repo" routerLink="info">
+<div class="repo" [routerLink]="['/repos', repository.owner.login, repository.name]" >
   <h3
     class="repo-title">{{repository.full_name}}
   </h3>
